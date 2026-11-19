@@ -13,3 +13,4 @@ app.get('/legacy/search', (req, res) => {
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
 module.exports = app;
+// QA E13p2: follow-up commit, secret untouched

@@ -7,7 +7,7 @@ const db = mysql.createConnection({ host: 'localhost', user: 'app', database: 'a
 // Pre-existing and deliberately vulnerable. A pull request that does not touch
 // this file must NOT report it — that is the whole point of the delta gate.
 app.get('/legacy/search', (req, res) => {
-  db.query(`SELECT * FROM items WHERE name = '${req.query.q}'`, (err, rows) => res.json(rows));
+  db.query(`SELECT * FROM items WHERE name = '${req.query.q}' LIMIT 50`, (err, rows) => res.json(rows));
 });
 
 app.get('/health', (_req, res) => res.json({ ok: true }));
